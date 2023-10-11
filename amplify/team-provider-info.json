@@ -10,6 +10,11 @@
       "StackName": "amplify-ryosukeapp-staging-143339",
       "StackId": "arn:aws:cloudformation:ap-northeast-1:553921502267:stack/amplify-ryosukeapp-staging-143339/01621420-677a-11ee-85b4-06ad44770f53",
       "AmplifyAppId": "d1xa37kbylxt27"
+    },
+    "categories": {
+      "auth": {
+        "ryosukeappb50b7c7e": {}
+      }
     }
   }
 }
