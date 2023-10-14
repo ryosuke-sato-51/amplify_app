@@ -6,6 +6,7 @@ Amplify.configure(awsconfig);
 
 import "@aws-amplify/ui-react/styles.css";
 import { Authenticator } from "@aws-amplify/ui-react";
+import { Button } from "@chakra-ui/react";
 
 import styles from "./page.module.css";
 
