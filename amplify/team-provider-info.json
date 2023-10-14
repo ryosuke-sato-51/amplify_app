@@ -14,6 +14,9 @@
     "categories": {
       "auth": {
         "ryosukeappb50b7c7e": {}
+      },
+      "api": {
+        "ryosukeapp": {}
       }
     }
   }
