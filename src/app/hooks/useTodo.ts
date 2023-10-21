@@ -5,6 +5,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { ListType, FormType } from "../types";
 
 export const useTodo = () => {
+  // モーダルの開閉
   const {
     isOpen: isOpenAddModal,
     onOpen: onOpenAddModal,
@@ -16,9 +17,13 @@ export const useTodo = () => {
     onClose: onCloseEditModal,
   } = useDisclosure();
 
+  // TODOリストの状態管理
   const [list, setList] = useState<ListType>();
+
+  // 編集するTODOのIDの状態管理
   const [currentId, setCurrentId] = useState<number>();
 
+  // React Hook Formの呼び出し
   const {
     register: addRegister,
     handleSubmit: handleSubmitAdd,
@@ -30,6 +35,7 @@ export const useTodo = () => {
     setValue: setValueEdit,
   } = useForm<FormType>();
 
+  // 編集モーダルを開く際の処理
   const onOpenAndSetValueEditModal = (id: number) => {
     if (!list) return;
     const currentItem = list.find((item) => item.id === id);
@@ -39,6 +45,7 @@ export const useTodo = () => {
     onOpenEditModal();
   };
 
+  // TODO追加処理
   const onSubmitAdd: SubmitHandler<FormType> = (data) => {
     const newItem = {
       id: Math.floor(Math.random() * 1000000000) + 1,
@@ -57,6 +64,7 @@ export const useTodo = () => {
     onCloseAddModal();
   };
 
+  // TODO更新処理
   const onSubmitEdit: SubmitHandler<FormType> = (data) => {
     if (!list) return;
     const newList = list.map((item) =>
@@ -72,6 +80,7 @@ export const useTodo = () => {
     onCloseEditModal();
   };
 
+  // TODOの削除処理
   const onDeleteItem = () => {
     if (!list) return;
     const newList = list.filter((item) => item.id !== currentId);
