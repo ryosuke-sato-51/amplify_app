@@ -6,7 +6,7 @@ import { ListType } from "../types";
 
 type ListProps = {
   list: ListType;
-  onOpenModal: (id: number) => void;
+  onOpenModal: (id: string) => void;
 };
 
 export const List = ({ list, onOpenModal }: ListProps) => {
