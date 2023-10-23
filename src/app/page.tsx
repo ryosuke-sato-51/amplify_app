@@ -37,7 +37,8 @@ export default function Home() {
           <>
             <Heading>TODOアプリ</Heading>
             <Stack
-              minWidth={"800px"}
+              width={"100%"}
+              maxWidth={"800px"}
               alignItems={"flex-start"}
               mt={"32px"}
               spacing={"16px"}
